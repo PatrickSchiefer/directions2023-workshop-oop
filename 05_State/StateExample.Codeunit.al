@@ -1,27 +1,32 @@
 ﻿codeunit 50120 LoginStateExample
 {
     SingleInstance = true;
-    procedure TransitionTo(state: Interface ILoginState);
-    begin
-        currentState := state;
-    end;
 
     procedure Login();
     begin
-        currentState.Login();
+        GetCurrentState().Login();
     end;
 
     procedure Logout();
     begin
-        currentState.Logout();
+        GetCurrentState().Logout();
+    end;
+
+    #region State Pattern
+
+    procedure TransitionTo(state: Interface ILoginState);
+    begin
+        currentState := state;
     end;
 
     procedure GetCurrentState(): Interface ILoginState;
     var
         loggedOutState: Interface ILoginState;
     begin
-        if (stateInitialized) then begin
-            TransitionTo(GetLoggedOutState());
+        if (not stateInitialized) then begin
+            loggedOutState := GetLoggedOutState();
+            TransitionTo(loggedOutState);
+            stateInitialized := true;
         end;
         exit(currentState);
     end;
@@ -36,4 +41,5 @@
     var
         currentState: Interface ILoginState;
         stateInitialized: Boolean;
+    #endregion
 }

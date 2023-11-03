@@ -36,6 +36,9 @@
             action(initValue)
             {
                 ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedOnly = true;
 
                 trigger OnAction()
                 begin
@@ -46,6 +49,10 @@
             {
                 ApplicationArea = All;
 
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedOnly = true;
+
                 trigger OnAction()
                 begin
                     adder.Add10();
@@ -54,6 +61,9 @@
             action(Subtract10)
             {
                 ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedOnly = true;
 
                 trigger OnAction()
                 begin

@@ -5,6 +5,7 @@
         loginExample: Codeunit LoginStateExample;
         loggedInState: Codeunit LoggedInState;
     begin
+        Message('Logging in');
         loginExample.TransitionTo(loggedInState);
     end;
 

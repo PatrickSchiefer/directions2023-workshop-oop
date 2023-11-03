@@ -10,6 +10,7 @@
         loginExample: Codeunit LoginStateExample;
         loggedOutState: Codeunit LoggedOutState;
     begin
+        Message('Logging out');
         loginExample.TransitionTo(loggedOutState);
     end;
 }
