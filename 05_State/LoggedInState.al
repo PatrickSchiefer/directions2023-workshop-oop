@@ -13,4 +13,9 @@
         Message('Logging out');
         loginExample.TransitionTo(loggedOutState);
     end;
+
+    procedure GetStateDescription(): Text;
+    begin
+        exit('Logged in');
+    end;
 }

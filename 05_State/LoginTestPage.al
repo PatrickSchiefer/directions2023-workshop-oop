@@ -4,7 +4,16 @@
     ApplicationArea = All;
     UsageCategory = Administration;
 
-
+    layout
+    {
+        area(Content)
+        {
+            field(stateDescription; LoginStateExample.GetStateDescription())
+            {
+                ApplicationArea = All;
+            }
+        }
+    }
 
     actions
     {
@@ -40,4 +49,7 @@
             }
         }
     }
+
+    var
+        LoginStateExample: Codeunit LoginStateExample;
 }

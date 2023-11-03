@@ -13,4 +13,9 @@
     begin
         Error('You are already logged out');
     end;
+
+    procedure GetStateDescription(): Text;
+    begin
+        exit('Logged out');
+    end;
 }

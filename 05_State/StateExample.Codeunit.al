@@ -12,6 +12,11 @@
         GetCurrentState().Logout();
     end;
 
+    procedure GetStateDescription(): Text;
+    begin
+        exit(GetCurrentState().GetStateDescription());
+    end;
+
     #region State Pattern
 
     procedure TransitionTo(state: Interface ILoginState);
@@ -19,7 +24,7 @@
         currentState := state;
     end;
 
-    procedure GetCurrentState(): Interface ILoginState;
+    local procedure GetCurrentState(): Interface ILoginState;
     var
         loggedOutState: Interface ILoginState;
     begin
@@ -31,7 +36,7 @@
         exit(currentState);
     end;
 
-    procedure GetLoggedOutState(): Interface ILoginState;
+    local procedure GetLoggedOutState(): Interface ILoginState;
     var
         loggedOutState: Codeunit loggedOutstate;
     begin
