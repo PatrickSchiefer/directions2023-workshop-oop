@@ -42,26 +42,26 @@
                     PurchaseExport.ExportPurchaseLine();
                 end;
             }
-            // action(ComplexExport)
-            // {
-            //     ApplicationArea = All;
-            //     Promoted = true;
-            //     PromotedCategory = Process;
-            //     PromotedIsBig = true;
-            //     Image = Export;
+            action(ComplexExport)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                Image = Export;
 
-            //     trigger OnAction()
-            //     var
-            //         dataGetter: Codeunit SalesLineComplexGetter;
-            //         dataCheck: Codeunit SalesLineComplexDataCheck;
-            //         dataProcessor: Codeunit SalesLineComplexProcessData;
-            //         dataExporter: Codeunit ComplexExportToMessage;
-            //         complexExport: Codeunit ComplexExportData;
-            //     begin
-            //         dataGetter.SetDocumentFilter('104001');
-            //         complexExport.Export(dataGetter, dataCheck, dataProcessor, dataExporter);
-            //     end;
-            // }
+                trigger OnAction()
+                var
+                    dataGetter: Codeunit SalesLineComplexGetter;
+                    dataCheck: Codeunit SalesLineComplexDataCheck;
+                    dataProcessor: Codeunit SalesLineComplexProcessData;
+                    dataExporter: Codeunit ComplexExportToMessage;
+                    complexExport: Codeunit ComplexExportData;
+                begin
+                    dataGetter.SetDocumentFilter('104001');
+                    complexExport.Export(dataGetter, dataCheck, dataProcessor, dataExporter);
+                end;
+            }
         }
     }
 
